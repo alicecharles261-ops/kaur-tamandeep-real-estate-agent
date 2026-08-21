@@ -1,0 +1,3 @@
+- [Replit Vite host fix](vite-host-fix.md) — must override host/port in vite.config.ts for Replit sandbox; Lovable default uses IPv6 which Replit doesn't support.
+- [Node.js 22 required](node22-supabase.md) — Supabase Realtime needs native WebSocket; Node 20 causes blank SSR page.
+- [CMS migration required](cms-migration.md) — CMS columns, storage buckets, and RLS write policies live in the migration SQL; must apply before admin CRUD works.

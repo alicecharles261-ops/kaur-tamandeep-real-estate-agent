@@ -14,7 +14,144 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      inquiries: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          property_slug: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          property_slug?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          property_slug?: string | null
+        }
+        Relationships: []
+      }
+      properties: {
+        Row: {
+          address: string
+          amenities: string[]
+          baths: number
+          beds: number
+          city: string
+          created_at: string
+          date_label: string | null
+          description: string
+          features: string[]
+          gallery_keys: string[]
+          garage: number | null
+          id: string
+          image_key: string
+          is_featured: boolean
+          mls: string | null
+          price: string
+          slug: string
+          sort_order: number
+          sqft: number | null
+          state: string
+          status: Database["public"]["Enums"]["property_status"]
+          title: string
+          type: string
+          year_built: number | null
+          zip: string
+        }
+        Insert: {
+          address: string
+          amenities?: string[]
+          baths: number
+          beds: number
+          city: string
+          created_at?: string
+          date_label?: string | null
+          description: string
+          features?: string[]
+          gallery_keys?: string[]
+          garage?: number | null
+          id?: string
+          image_key: string
+          is_featured?: boolean
+          mls?: string | null
+          price: string
+          slug: string
+          sort_order?: number
+          sqft?: number | null
+          state: string
+          status: Database["public"]["Enums"]["property_status"]
+          title: string
+          type: string
+          year_built?: number | null
+          zip: string
+        }
+        Update: {
+          address?: string
+          amenities?: string[]
+          baths?: number
+          beds?: number
+          city?: string
+          created_at?: string
+          date_label?: string | null
+          description?: string
+          features?: string[]
+          gallery_keys?: string[]
+          garage?: number | null
+          id?: string
+          image_key?: string
+          is_featured?: boolean
+          mls?: string | null
+          price?: string
+          slug?: string
+          sort_order?: number
+          sqft?: number | null
+          state?: string
+          status?: Database["public"]["Enums"]["property_status"]
+          title?: string
+          type?: string
+          year_built?: number | null
+          zip?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          quote: string
+          sort_order: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          quote: string
+          sort_order?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          quote?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +160,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      property_status: "for-sale" | "for-lease" | "sold" | "leased"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +287,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      property_status: ["for-sale", "for-lease", "sold", "leased"],
+    },
   },
 } as const

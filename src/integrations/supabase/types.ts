@@ -54,21 +54,44 @@ export type Database = {
           created_at: string
           date_label: string | null
           description: string
+          documents: string[]
+          energy_rating: string | null
           features: string[]
           gallery_keys: string[]
           garage: number | null
+          google_maps_url: string | null
           id: string
           image_key: string
+          is_archived: boolean
+          is_draft: boolean
           is_featured: boolean
+          is_hidden: boolean
+          is_published: boolean
+          latitude: number | null
+          lease_price: string | null
+          longitude: number | null
+          lot_size: string | null
           mls: string | null
+          nearby_hospitals: string[]
+          nearby_restaurants: string[]
+          nearby_schools: string[]
+          nearby_shopping: string[]
+          open_house_date: string | null
+          open_house_time: string | null
           price: string
+          seo_description: string | null
+          seo_keywords: string | null
+          seo_title: string | null
           slug: string
           sort_order: number
           sqft: number | null
           state: string
           status: Database["public"]["Enums"]["property_status"]
+          stories: number | null
           title: string
           type: string
+          video_url: string | null
+          virtual_tour_url: string | null
           year_built: number | null
           zip: string
         }
@@ -81,21 +104,44 @@ export type Database = {
           created_at?: string
           date_label?: string | null
           description: string
+          documents?: string[]
+          energy_rating?: string | null
           features?: string[]
           gallery_keys?: string[]
           garage?: number | null
+          google_maps_url?: string | null
           id?: string
           image_key: string
+          is_archived?: boolean
+          is_draft?: boolean
           is_featured?: boolean
+          is_hidden?: boolean
+          is_published?: boolean
+          latitude?: number | null
+          lease_price?: string | null
+          longitude?: number | null
+          lot_size?: string | null
           mls?: string | null
+          nearby_hospitals?: string[]
+          nearby_restaurants?: string[]
+          nearby_schools?: string[]
+          nearby_shopping?: string[]
+          open_house_date?: string | null
+          open_house_time?: string | null
           price: string
+          seo_description?: string | null
+          seo_keywords?: string | null
+          seo_title?: string | null
           slug: string
           sort_order?: number
           sqft?: number | null
           state: string
           status: Database["public"]["Enums"]["property_status"]
+          stories?: number | null
           title: string
           type: string
+          video_url?: string | null
+          virtual_tour_url?: string | null
           year_built?: number | null
           zip: string
         }
@@ -108,21 +154,44 @@ export type Database = {
           created_at?: string
           date_label?: string | null
           description?: string
+          documents?: string[]
+          energy_rating?: string | null
           features?: string[]
           gallery_keys?: string[]
           garage?: number | null
+          google_maps_url?: string | null
           id?: string
           image_key?: string
+          is_archived?: boolean
+          is_draft?: boolean
           is_featured?: boolean
+          is_hidden?: boolean
+          is_published?: boolean
+          latitude?: number | null
+          lease_price?: string | null
+          longitude?: number | null
+          lot_size?: string | null
           mls?: string | null
+          nearby_hospitals?: string[]
+          nearby_restaurants?: string[]
+          nearby_schools?: string[]
+          nearby_shopping?: string[]
+          open_house_date?: string | null
+          open_house_time?: string | null
           price?: string
+          seo_description?: string | null
+          seo_keywords?: string | null
+          seo_title?: string | null
           slug?: string
           sort_order?: number
           sqft?: number | null
           state?: string
           status?: Database["public"]["Enums"]["property_status"]
+          stories?: number | null
           title?: string
           type?: string
+          video_url?: string | null
+          virtual_tour_url?: string | null
           year_built?: number | null
           zip?: string
         }
@@ -160,7 +229,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      property_status: "for-sale" | "for-lease" | "sold" | "leased"
+      property_status: "for-sale" | "for-lease" | "sold" | "leased" | "pending"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -288,7 +357,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      property_status: ["for-sale", "for-lease", "sold", "leased"],
+      property_status: ["for-sale", "for-lease", "sold", "leased", "pending"],
     },
   },
 } as const
